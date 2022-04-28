@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/userlogin.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <br><br><br><br><br><br>
+    <center>
+        <h1 id = "title">
+            Login
+        </h1>
+    <div id="nadjma"> 
+    {% if messages %}
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+{%endif %}
+</div>
+</center>
+    <div>
+        <label>
+            Username 
+            <span id="nadjma">
+                *
+            </span>
+        </label>
+    </div>
+    <form method="post">
+        {% csrf_token %}
+    <center>
+        <div>
+            <input type="text" name="username" class="inputs" placeholder ="Username">
+        </div> 
+    </center>
+    <div>
+        <label>
+            
+            Password 
+            <span id="nadjma">
+                *
+            </span>
+        </label>
+    </div>
+    <center>
+    
+
+
+        <div>
+            <input type="password" name="password" class="inputs" placeholder ="Password"> 
+        </div>
+
+
+
+        <div>
+            <input type="submit" value="submit">
+        </div>
+    </center>
+</form>
+</body>
+</html>
